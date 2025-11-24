@@ -1,6 +1,6 @@
 {
 	"version": "2.8.0",
-	"mailpoet_api_key": "your_mailpoet_api_key",
+	"mailpoet_api_key": "34fb19405ad75a1b45fc633abab5f37c",
 	"mailpoet_list_id": "3",
 	"subcription_widget": {
 		"enable": true,
@@ -17,59 +17,38 @@
 		"right_image": "/images/SVG-subcribe2.png",
 		"features_list": ["Create a free account.", "Write your stories."]
 	},
-	"top_banner": {
-		"enable": true,
-		"description": "-50% Intro price for the next 72 hours only!.",
-		"end_link": {
-			"url": "https://themeforest.net/item/ncmaz-nextjs-headless-wordpress-blog-magazine/47815656",
-			"text": "Buy now  →",
-			"new_tab": true
-		}
-	},
 	"top_category_section": {
 		"enable": true,
 		"title": "Discover top 10 categories",
 		"sub_title": "Let's explore the most popular categories"
 	},
 	"site_info": {
-		"site_title": "Ncmaz Nextjs Blog",
-		"site_description": "Ncmaz Nextjs Blog headless WordPress",
-		"site_keywords": "Ncmaz Nextjs Blog",
-		"site_author": "ChisNghiax",
-		"site_email": "Your Email",
-		"site_phone": "Your Phone",
-		"site_address": "Your Address",
-		"site_city": "Your City",
-		"site_state": "Your State",
-		"site_zip": "Your Zip",
-		"site_country": "Your Country",
-		"site_url": "https://www.yoursite.com",
+		"site_title": "Rekayasa Sipil",
+		"site_description": "Pusat Belajar Sipil Kumpulan materi, referensi, dan sumber belajar teknik sipil untuk mahasiswa dan praktisi.",
+		"site_keywords": "Rekayasa Sipil Materi",
+		"site_author": "Rekayasa Sipil",
+		"site_email": "info@rekayasa-sipil.my.id",
+		"site_phone": "-",
+		"site_address": "-",
+		"site_city": "Sleman",
+		"site_state": "DI Yogyakarta",
+		"site_zip": "-",
+		"site_country": "Indonesia",
+		"site_url": "https://rekaysa-sipil.my.id",
 		"site_logo": "/logo.png",
 		"site_logo_light": "/logo-light.png",
 		"site_favicon": "/favicon.png"
 	},
 	"site_socials": [
 		{
-			"name": "facebook",
-			"url": "https://www.facebook.com/yourfacebookpage",
-			"icon": "/images/socials/facebook.svg",
-			"description": "Follow us on Facebook"
-		},
-		{
-			"name": "twitter",
-			"url": "https://twitter.com/yourtwitterpage",
-			"icon": "/images/socials/x-twitter.svg",
-			"description": "Follow us on Twitter"
-		},
-		{
-			"name": "github",
-			"url": "https://www.github.com/yourmediumpage",
-			"icon": "/images/socials/github.svg",
-			"description": "Follow us on Github"
+			"name": "instagram",
+			"url": "https://instagram.com/rekayasa.sipil",
+			"icon": "/images/socials/instagram.svg",
+			"description": "Follow us on Instagram"
 		},
 		{
 			"name": "tiktok",
-			"url": "https://www.tiktok.com/yourtiktokpage",
+			"url": "https://www.tiktok.com/rekayasa.sipil",
 			"icon": "/images/socials/tiktok.svg",
 			"description": "Follow us on Tiktok"
 		}
@@ -82,7 +61,7 @@
 		}
 	},
 	"site_footer": {
-		"all_rights_reserved_text": "© 2024 BooliiTheme Company, Inc. All rights reserved."
+		"all_rights_reserved_text": "© 2025 Rekayasa Sipil. All rights reserved."
 	},
 	"single_page": {
 		"show_view_cout": true,
@@ -183,7 +162,7 @@
 		"sub_title": "Enter your email below to reset your password.",
 		"blockquote": {
 			"text": "This theme has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever before.",
-			"author": "Chis agency"
+			"author": "Rekayasa Sipil"
 		}
 	},
 	"signUp_page": {
@@ -191,7 +170,7 @@
 		"sub_title": "Enter your email below to create your account.",
 		"blockquote": {
 			"text": "This theme has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever before.",
-			"author": "Chis agency"
+			"author": "Rekayasa Sipil"
 		}
 	},
 	"signIn_page": {
@@ -199,7 +178,7 @@
 		"sub_title": "Enter your email below to sign in to your account.",
 		"blockquote": {
 			"text": "This theme has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever before.",
-			"author": "Chis agency"
+			"author": "Rekayasa Sipil"
 		},
 		"lost_password": {
 			"is_use_lostpassword_default_of_wp": false,
@@ -227,22 +206,22 @@
 			{
 				"name": "address",
 				"title": "🚀 ADDRESS",
-				"desc": "123 Main Street, New York, NY 10001"
+				"desc": "Sleman, DI Yogyakarta"
 			},
 			{
 				"name": "email",
 				"title": "💌 EMAIL",
-				"desc": "example@example.com"
+				"desc": "info@rekayasa-sipil.my.id"
 			},
 			{
 				"name": "phone",
 				"title": "☎️ PHONE",
-				"desc": "+88 123 456 789"
+				"desc": "-"
 			},
 			{
 				"name": "working_hours",
 				"title": "🕒 WORKING HOURS",
-				"desc": "Mon - Fri: 9:00 - 19:00"
+				"desc": "24/7"
 			},
 			{
 				"name": "socials",
@@ -269,7 +248,7 @@
 	},
 	"discussion_settings": {
 		"enable": true,
-		"must_logged_in_to_comment": true
+		"must_logged_in_to_comment": false
 	},
 	"general_settings": {
 		"timeFormat": "h:mm a",
