@@ -18,11 +18,11 @@
 		"features_list": ["Create a free account.", "Write your stories."]
 	},
 	"top_banner": {
-		"enable": false,
-		"description": "-50% Intro price for the next 72 hours only!.",
+		"enable": true,
+		"description": "Laman masih dalam pengembangan, mohon maklum.",
 		"end_link": {
-			"url": "#",
-			"text": "Buy now  →",
+			"url": "https://instagram.com/rekayasa.sipil",
+			"text": "Liat Instagram Kami →",
 			"new_tab": true
 		}
 	},
