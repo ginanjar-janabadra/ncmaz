@@ -17,6 +17,15 @@
 		"right_image": "/images/SVG-subcribe2.png",
 		"features_list": ["Create a free account.", "Write your stories."]
 	},
+	"top_banner": {
+		"enable": false,
+		"description": "-50% Intro price for the next 72 hours only!.",
+		"end_link": {
+			"url": "#",
+			"text": "Buy now  →",
+			"new_tab": true
+		}
+	},
 	"top_category_section": {
 		"enable": true,
 		"title": "Discover top 10 categories",
@@ -73,16 +82,16 @@
 			"title": "Recommended searches",
 			"items": [
 				{
-					"title": "Programming",
-					"url": "/search/posts/programming"
+					"title": "Materi",
+					"url": "/search/posts/materi"
 				},
 				{
-					"title": "Design",
-					"url": "/search/posts/design"
+					"title": "Blog",
+					"url": "/search/posts/blog"
 				},
 				{
-					"title": "Technology",
-					"url": "/search/posts/technology"
+					"title": "Berita",
+					"url": "/search/posts/berita"
 				}
 			]
 		},
