@@ -28,6 +28,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 		<>
 			<GoogleAnalytics trackPageViews />
 
+			<SpeedInsights/>
+
 			<FaustProvider pageProps={pageProps}>
 				<WordPressBlocksProvider
 					config={{
