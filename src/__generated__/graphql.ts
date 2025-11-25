@@ -3488,6 +3488,8 @@ export type CoreGroupAttributes = BlockWithSupportsAnchor & {
   borderColor?: Maybe<Scalars['String']['output']>;
   /** The &quot;className&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
   className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;cssClassName&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
+  cssClassName?: Maybe<Scalars['String']['output']>;
   /** The &quot;fontFamily&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
   fontFamily?: Maybe<Scalars['String']['output']>;
   /** The &quot;fontSize&quot; field on the &quot;CoreGroupAttributes&quot; block or block attributes */
@@ -5435,10 +5437,27 @@ export type CorePostTerms = EditorBlock & PageEditorBlock & PostEditorBlock & {
   name?: Maybe<Scalars['String']['output']>;
   /** The parent id of the Block */
   parentClientId?: Maybe<Scalars['String']['output']>;
+  /** Prefix to display before the post terms */
+  prefix?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
+  /** Suffix to display after the post terms */
+  suffix?: Maybe<Scalars['String']['output']>;
+  /** Connection between the CorePostTerms type and the Taxonomy type */
+  taxonomy?: Maybe<CorePostTermsToTaxonomyConnectionEdge>;
+  /** Connection between the CorePostTerms type and the TermNode type */
+  terms?: Maybe<CorePostTermsToTermNodeConnection>;
   /** The (GraphQL) type of the block */
   type?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** A block used for editing the site */
+export type CorePostTermsTermsArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 /** Attributes of the CorePostTerms Block Type */
@@ -5474,6 +5493,48 @@ export type CorePostTermsAttributes = {
   textAlign?: Maybe<Scalars['String']['output']>;
   /** The &quot;textColor&quot; field on the &quot;CorePostTermsAttributes&quot; block or block attributes */
   textColor?: Maybe<Scalars['String']['output']>;
+};
+
+/** Connection between the CorePostTerms type and the Taxonomy type */
+export type CorePostTermsToTaxonomyConnectionEdge = Edge & OneToOneConnection & TaxonomyConnectionEdge & {
+  __typename?: 'CorePostTermsToTaxonomyConnectionEdge';
+  /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The node of the connection, without the edges */
+  node: Taxonomy;
+};
+
+/** Connection between the CorePostTerms type and the TermNode type */
+export type CorePostTermsToTermNodeConnection = Connection & TermNodeConnection & {
+  __typename?: 'CorePostTermsToTermNodeConnection';
+  /** Edges for the CorePostTermsToTermNodeConnection connection */
+  edges: Array<CorePostTermsToTermNodeConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<TermNode>;
+  /** Information about pagination in a connection. */
+  pageInfo: CorePostTermsToTermNodeConnectionPageInfo;
+};
+
+/** An edge in a connection */
+export type CorePostTermsToTermNodeConnectionEdge = Edge & TermNodeConnectionEdge & {
+  __typename?: 'CorePostTermsToTermNodeConnectionEdge';
+  /** A cursor for use in pagination */
+  cursor?: Maybe<Scalars['String']['output']>;
+  /** The item at the end of the edge */
+  node: TermNode;
+};
+
+/** Pagination metadata specific to &quot;CorePostTermsToTermNodeConnection&quot; collections. Provides cursors and flags for navigating through sets of CorePostTermsToTermNodeConnection Nodes. */
+export type CorePostTermsToTermNodeConnectionPageInfo = PageInfo & TermNodeConnectionPageInfo & WpPageInfo & {
+  __typename?: 'CorePostTermsToTermNodeConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** A block used for editing the site */
@@ -16391,8 +16452,15 @@ export type TaxonomyToTermNodeConnectionPageInfo = PageInfo & TermNodeConnection
 };
 
 /** The template assigned to the node */
-export type Template_PageNoTitle = ContentTemplate & {
-  __typename?: 'Template_PageNoTitle';
+export type Template_Blank = ContentTemplate & {
+  __typename?: 'Template_Blank';
+  /** The name of the template */
+  templateName?: Maybe<Scalars['String']['output']>;
+};
+
+/** The template assigned to the node */
+export type Template_BlogAlternative = ContentTemplate & {
+  __typename?: 'Template_BlogAlternative';
   /** The name of the template */
   templateName?: Maybe<Scalars['String']['output']>;
 };
@@ -17713,6 +17781,10 @@ export enum UserRoleEnum {
   /** User role with specific capabilities */
   Editor = 'EDITOR',
   /** User role with specific capabilities */
+  SeoEditor = 'SEO_EDITOR',
+  /** User role with specific capabilities */
+  SeoManager = 'SEO_MANAGER',
+  /** User role with specific capabilities */
   Subscriber = 'SUBSCRIBER'
 }
 
@@ -18438,6 +18510,146 @@ export type WritingSettings = {
   useSmilies?: Maybe<Scalars['Boolean']['output']>;
 };
 
+/** A block used for editing the site */
+export type YoastFaqBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
+  __typename?: 'YoastFaqBlock';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the YoastFaqBlock Block Type */
+  attributes?: Maybe<YoastFaqBlockAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+  /** The (GraphQL) type of the block */
+  type?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the YoastFaqBlock Block Type */
+export type YoastFaqBlockAttributes = {
+  __typename?: 'YoastFaqBlockAttributes';
+  /** The &quot;additionalListCssClasses&quot; field on the &quot;YoastFaqBlockAttributes&quot; block or block attributes */
+  additionalListCssClasses?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;YoastFaqBlockAttributes&quot; block or block attributes */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;YoastFaqBlockAttributes&quot; block or block attributes */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;YoastFaqBlockAttributes&quot; block or block attributes */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;questions&quot; field on the &quot;YoastFaqBlockAttributes&quot; block or block attributes */
+  questions?: Maybe<Scalars['BlockAttributesArray']['output']>;
+};
+
+/** A block used for editing the site */
+export type YoastHowToBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
+  __typename?: 'YoastHowToBlock';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the YoastHowToBlock Block Type */
+  attributes?: Maybe<YoastHowToBlockAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+  /** The (GraphQL) type of the block */
+  type?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the YoastHowToBlock Block Type */
+export type YoastHowToBlockAttributes = {
+  __typename?: 'YoastHowToBlockAttributes';
+  /** The &quot;additionalListCssClasses&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  additionalListCssClasses?: Maybe<Scalars['String']['output']>;
+  /** The &quot;className&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;days&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  days?: Maybe<Scalars['String']['output']>;
+  /** The &quot;defaultDurationText&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  defaultDurationText?: Maybe<Scalars['String']['output']>;
+  /** The &quot;description&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  description?: Maybe<Scalars['String']['output']>;
+  /** The &quot;durationText&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  durationText?: Maybe<Scalars['String']['output']>;
+  /** The &quot;hasDuration&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  hasDuration?: Maybe<Scalars['Boolean']['output']>;
+  /** The &quot;hours&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  hours?: Maybe<Scalars['String']['output']>;
+  /** The &quot;jsonDescription&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  jsonDescription?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;minutes&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  minutes?: Maybe<Scalars['String']['output']>;
+  /** The &quot;steps&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  steps?: Maybe<Scalars['BlockAttributesArray']['output']>;
+  /** The &quot;unorderedList&quot; field on the &quot;YoastHowToBlockAttributes&quot; block or block attributes */
+  unorderedList?: Maybe<Scalars['Boolean']['output']>;
+};
+
+/** A block used for editing the site */
+export type YoastSeoBreadcrumbs = EditorBlock & PageEditorBlock & PostEditorBlock & {
+  __typename?: 'YoastSeoBreadcrumbs';
+  /** The API version of the Gutenberg Block */
+  apiVersion?: Maybe<Scalars['Int']['output']>;
+  /** Attributes of the YoastSeoBreadcrumbs Block Type */
+  attributes?: Maybe<YoastSeoBreadcrumbsAttributes>;
+  /** The name of the category the Block belongs to */
+  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
+  /** The id of the Block */
+  clientId?: Maybe<Scalars['String']['output']>;
+  /** CSS Classnames to apply to the block */
+  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  /** The inner blocks of the Block */
+  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
+  /** Whether the block is Dynamic (server rendered) */
+  isDynamic: Scalars['Boolean']['output'];
+  /** The name of the block */
+  name?: Maybe<Scalars['String']['output']>;
+  /** The parent id of the Block */
+  parentClientId?: Maybe<Scalars['String']['output']>;
+  /** The rendered HTML for the block */
+  renderedHtml?: Maybe<Scalars['String']['output']>;
+  /** The (GraphQL) type of the block */
+  type?: Maybe<Scalars['String']['output']>;
+};
+
+/** Attributes of the YoastSeoBreadcrumbs Block Type */
+export type YoastSeoBreadcrumbsAttributes = {
+  __typename?: 'YoastSeoBreadcrumbsAttributes';
+  /** The &quot;className&quot; field on the &quot;YoastSeoBreadcrumbsAttributes&quot; block or block attributes */
+  className?: Maybe<Scalars['String']['output']>;
+  /** The &quot;lock&quot; field on the &quot;YoastSeoBreadcrumbsAttributes&quot; block or block attributes */
+  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
+  /** The &quot;metadata&quot; field on the &quot;YoastSeoBreadcrumbsAttributes&quot; block or block attributes */
+  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
+};
+
 export type SearchFormQueryGetPostsBySearchQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
@@ -18539,7 +18751,7 @@ export type NcmazFcPostFullVsEditorBlocksNoContentFieldsFragment = { __typename:
   ) | (
     { __typename: 'NcmazFaustBlockTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
     & { ' $fragmentRefs'?: { 'NcmazFaustBlockTermsFragmentFragment': NcmazFaustBlockTermsFragmentFragment } }
-  ) | null> | null, author?: { __typename?: 'NodeWithAuthorToUserConnectionEdge', node: (
+  ) | { __typename: 'YoastFaqBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastHowToBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastSeoBreadcrumbs', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | null> | null, author?: { __typename?: 'NodeWithAuthorToUserConnectionEdge', node: (
       { __typename?: 'User', description?: string | null }
       & { ' $fragmentRefs'?: { 'NcmazFcUserShortForPostCardFragmentFragment': NcmazFcUserShortForPostCardFragmentFragment } }
     ) } | null, categories?: { __typename?: 'PostToCategoryConnection', nodes: Array<(
@@ -19384,7 +19596,7 @@ export type GetPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Pa
     ) | (
       { __typename: 'NcmazFaustBlockTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
       & { ' $fragmentRefs'?: { 'NcmazFaustBlockTermsFragmentFragment': NcmazFaustBlockTermsFragmentFragment } }
-    ) | null> | null } | null, generalSettings?: (
+    ) | { __typename: 'YoastFaqBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastHowToBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'YoastSeoBreadcrumbs', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | null> | null } | null, generalSettings?: (
     { __typename?: 'GeneralSettings' }
     & { ' $fragmentRefs'?: { 'NcgeneralSettingsFieldsFragmentFragment': NcgeneralSettingsFieldsFragmentFragment } }
   ) | null, primaryMenuItems?: { __typename?: 'RootQueryToMenuItemConnection', nodes: Array<(
